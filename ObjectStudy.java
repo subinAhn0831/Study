@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class ObjectStudy {
     private String name;
     private int age;
@@ -22,5 +24,14 @@ public class ObjectStudy {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    // 자동생성 equals() > 동등성 비교
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        ObjectStudy study = (ObjectStudy) object;
+        return age == study.age && Objects.equals(name, study.name);
     }
 }
