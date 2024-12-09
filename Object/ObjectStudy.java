@@ -1,3 +1,5 @@
+package Object;
+
 import java.util.Objects;
 
 public class ObjectStudy {
@@ -11,16 +13,22 @@ public class ObjectStudy {
 
     public static void main(String[] args) {
 
-        // ObjectPrinter printer = new ObjectPrinter();
+        // Object.ObjectPrinter printer = new Object.ObjectPrinter();
         ObjectStudy study = new ObjectStudy("subin", 29);
 
         System.out.println(ObjectPrinter.printObj(study));
+
+        ImmutableAddress address = new ImmutableAddress("돈암");
+        ImmutableAddress address2 = address.add("동선");
+        System.out.println(address.toString());
+        System.out.println(address2.toString());
+
 
     }
 
     @Override
     public String toString() {
-        return "ObjectStudy{" +
+        return "Object.ObjectStudy{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
